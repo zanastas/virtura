@@ -1,0 +1,125 @@
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.character-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.character-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.character-card:hover .character-image img {
+    transform: scale(1.05);
+}
+
+.character-info {
+    padding: 20px;
+    color: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-info h2 {
+    margin: 0 0 10px 0;
+    color: #4CAF50;
+    font-size: 1.5rem;
+}
+
+.character-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    flex-grow: 1;
+}
+
+.date-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.date-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Create Your Own Card Styling */
+.create-own .character-image {
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question-mark {
+    font-size: 5rem;
+    color: #4CAF50;
+    opacity: 0.5;
+}
+
+.create-btn {
+    background-color: #2196F3;
+}
+
+.create-btn:hover {
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+@media (max-width: 768px) {
+    .character-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .character-info h2 {
+        font-size: 1.2rem;
+    }
+}
+
+.character-image.slideshow {
+    position: relative;
+}
+
+.character-image.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.character-image.slideshow img.active {
+    opacity: 1;
+} 

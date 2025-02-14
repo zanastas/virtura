@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    cursor: none; /* Hide the default cursor */
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.video-wrapper {
+    flex: 1;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 20px;
+}
+
+.enter-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.enter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    cursor: none;
+}
+
+.wonderland {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.blackmirror {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Add this new CSS for the custom cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 45px;
+    user-select: none;
+    transform: translate(-50%, -50%);
+}
+
+/* Add these new styles */
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.profile-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #333;
+    background-image: url('/public/nova.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.text-window {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.text-window p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-wrapper {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .text-window {
+        min-width: 200px;
+    }
+}
+
+#typing-text {
+    margin: 0;
+    font-size: 1.2rem;
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    text-shadow: none;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #fff }
+} 

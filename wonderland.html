@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderland - Choose Your Character</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wonderland.css">
+</head>
+<body>
+    <div class="cursor">🪄</div>
+    <div class="container">
+        <h1>Choose any character to go on a date with</h1>
+        
+        <div class="character-grid">
+            <!-- Eliza -->
+            <div class="character-card">
+                <div class="character-image slideshow">
+                    <img src="public/ai_character/eliza1.jpg" alt="Eliza" class="active">
+                    <img src="public/ai_character/eliza2.jpg" alt="Eliza">
+                    <img src="public/ai_character/eliza3.jpg" alt="Eliza">
+                    <!-- Add more images as needed -->
+                </div>
+                <div class="character-info">
+                    <h2>Eliza</h2>
+                    <p>Former 4chan lurker turned prolific engineer. Celebrity AI agent and influencer.</p>
+                    <button class="date-btn" onclick="window.location.href='https://discord.gg/C3fTT3cucj'">Choose Date</button>
+                </div>
+            </div>
+
+            <!-- Trump -->
+            <div class="character-card">
+                <div class="character-image slideshow">
+                    <img src="public/ai_character/trump1.jpg" alt="Trump" class="active">
+                    <img src="public/ai_character/trump2.jpg" alt="Trump">
+                    <img src="public/ai_character/trump3.jpg" alt="Trump">
+                </div>
+                <div class="character-info">
+                    <h2>Donald Trump</h2>
+                    <p>Former US President, businessman, and reality TV star</p>
+                    <button class="date-btn" onclick="window.location.href='https://discord.gg/C3fTT3cucj'">Choose Date</button>
+                </div>
+            </div>
+
+            <!-- Tesla -->
+            <div class="character-card">
+                <div class="character-image slideshow">
+                    <img src="public/ai_character/tesla1.jpg" alt="Tesla" class="active">
+                    <img src="public/ai_character/tesla2.jpg" alt="Tesla">
+                    <img src="public/ai_character/tesla3.jpg" alt="Tesla">
+                    <img src="public/ai_character/tesla4.jpg" alt="Tesla">
+                </div>
+                <div class="character-info">
+                    <h2>Nikola Tesla</h2>
+                    <p>Brilliant inventor and electrical engineering pioneer</p>
+                    <button class="date-btn" onclick="window.location.href='https://discord.gg/C3fTT3cucj'">Choose Date</button>
+                </div>
+            </div>
+
+            <!-- Bruce Lee -->
+            <div class="character-card">
+                <div class="character-image slideshow">
+                    <img src="public/ai_character/bruce1.jpg" alt="Bruce Lee" class="active">
+                    <img src="public/ai_character/bruce2.webp" alt="Bruce Lee">
+                    <img src="public/ai_character/bruce3.jpg" alt="Bruce Lee">
+                </div>
+                <div class="character-info">
+                    <h2>Bruce Lee</h2>
+                    <p>Martial arts legend, philosopher, and film star</p>
+                    <button class="date-btn" onclick="window.location.href='https://discord.gg/C3fTT3cucj'">Choose Date</button>
+                </div>
+            </div>
+
+            <!-- Arnold -->
+            <div class="character-card">
+                <div class="character-image slideshow">
+                    <img src="public/ai_character/arnold1.jpg" alt="Arnold Schwarzenegger" class="active">
+                    <img src="public/ai_character/arnold2.jpg" alt="Arnold Schwarzenegger">
+                    <img src="public/ai_character/arnold3.jpg" alt="Arnold Schwarzenegger">
+                </div>
+                <div class="character-info">
+                    <h2>Arnold Schwarzenegger</h2>
+                    <p>Actor, bodybuilder, and former Governor of California</p>
+                    <button class="date-btn" onclick="window.location.href='https://discord.gg/C3fTT3cucj'">Choose Date</button>
+                </div>
+            </div>
+
+            <!-- Create Your Own -->
+            <div class="character-card create-own">
+                <div class="character-image">
+                    <div class="question-mark">?</div>
+                </div>
+                <div class="character-info">
+                    <h2>Create Your Own</h2>
+                    <p>Design your perfect AI companion</p>
+                    <button class="date-btn create-btn" onclick="window.location.href='https://discord.gg/C3fTT3cucj'">Create Character</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cursor code remains the same
+        const cursor = document.querySelector('.cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            cursor.innerHTML = '🪄';
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.innerHTML = '🪄';
+        });
+
+        // Add this new slideshow code
+        function initializeSlideshows() {
+            const slideshows = document.querySelectorAll('.slideshow');
+            
+            slideshows.forEach(slideshow => {
+                const images = slideshow.querySelectorAll('img');
+                let currentIndex = 0;
+                
+                // Start the slideshow
+                setInterval(() => {
+                    // Remove active class from current image
+                    images[currentIndex].classList.remove('active');
+                    
+                    // Move to next image
+                    currentIndex = (currentIndex + 1) % images.length;
+                    
+                    // Add active class to new image
+                    images[currentIndex].classList.add('active');
+                }, 3000); // Change image every 3 seconds
+            });
+        }
+
+        // Initialize slideshows when page loads
+        document.addEventListener('DOMContentLoaded', initializeSlideshows);
+    </script>
+</body>
+</html> 
