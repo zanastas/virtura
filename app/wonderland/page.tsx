@@ -12,14 +12,29 @@ interface Character {
 const characters: Character[] = [
   {
     name: 'Eliza',
-    description: 'Former 4chan lurker turned prolific engineer. Celebrity AI agent and influencer.',
+    description: 'Celebrity AI agent, former 4chan lurker turned prolific engineer.',
     images: ['/ai_character/eliza1.jpg', '/ai_character/eliza2.jpg', '/ai_character/eliza3.jpg']
   },
   {
     name: 'Donald Trump',
-    description: 'Former US President, businessman, and reality TV star',
+    description: 'US President, businessman, and golf enthusiast',
     images: ['/ai_character/trump1.jpg', '/ai_character/trump2.jpg', '/ai_character/trump3.jpg']
   },
+  {
+    name: 'Nikola Tesla',
+    description: 'Genius inventor and engineer, known for his work on AC motors and wireless communication.',
+    images: ['/ai_character/tesla1.jpg', '/ai_character/tesla2.jpg', '/ai_character/tesla3.jpg', '/ai_character/tesla4.jpg']
+  },
+  {
+    name: 'Arnold Schwarzenegger',
+    description: 'Former Governor of California and action movie star',
+    images: ['/ai_character/arnold1.jpg', '/ai_character/arnold2.jpg', '/ai_character/arnold3.jpg']
+  },
+  {
+    name: 'Bruce Lee',
+    description: 'Legendary martial artist and actor',
+    images: ['/ai_character/  bruce1.jpg', '/ai_character/bruce2.jpg', '/ai_character/bruce3.jpg']
+  }
   // Add other characters here
 ];
 
@@ -95,7 +110,7 @@ export default function Wonderland() {
             </div>
             <div className="character-info">
               <h2>Create Your Own</h2>
-              <p>Design your perfect AI companion</p>
+              <p>Design your own AI character</p>
               <button 
                 className="date-btn create-btn"
                 onClick={handleDateClick}

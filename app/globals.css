@@ -1,14 +1,36 @@
-body {
+/* Update these base styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #000;
     color: #fff;
     font-family: Arial, sans-serif;
-    cursor: none; /* Hide the default cursor */
+    cursor: none;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -16,6 +38,7 @@ body {
     width: 100%;
     max-width: 1200px;
     padding: 20px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -30,11 +53,13 @@ h1 {
     justify-content: center;
     gap: 30px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .video-wrapper {
     flex: 1;
     max-width: 560px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
