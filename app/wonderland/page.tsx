@@ -22,7 +22,7 @@ const characters: Character[] = [
   },
   {
     name: 'Nikola Tesla',
-    description: 'Genius inventor and engineer, known for his work on AC motors and wireless communication.',
+    description: 'Genius inventor and engineer, known for his work on AC motor.',
     images: ['/ai_character/tesla1.jpg', '/ai_character/tesla2.jpg', '/ai_character/tesla3.jpg', '/ai_character/tesla4.jpg']
   },
   {
@@ -33,7 +33,7 @@ const characters: Character[] = [
   {
     name: 'Bruce Lee',
     description: 'Legendary martial artist and actor',
-    images: ['/ai_character/  bruce1.jpg', '/ai_character/bruce2.jpg', '/ai_character/bruce3.jpg']
+    images: ['/ai_character/bruce1.jpg', '/ai_character/bruce2.jpg', '/ai_character/bruce3.jpg']
   }
   // Add other characters here
 ];

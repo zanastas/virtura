@@ -44,7 +44,7 @@ export default function Home() {
     <main>
       <div className="cursor">🪄</div>
       <div className="container">
-        <h1>Welcome to Virtura!</h1>
+        <h1>Welcome to Virtura</h1>
         
         <div className="profile-section">
           <div className="profile-circle">
