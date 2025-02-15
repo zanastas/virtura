@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="cursor">🪄</div>
       <div className="container">
         <h1>Welcome to Virtura</h1>
@@ -61,24 +61,44 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="video-container">
-          <div className="video-wrapper">
-            <iframe 
-              src="https://www.youtube.com/embed/VIDEO_ID_1?loop=1&playlist=VIDEO_ID_1&mute=1" 
-              frameBorder="0" 
-              allowFullScreen
-            />
+        <div className="video-container grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+          <div className="relative w-full">
+            <div className="video-wrapper">
+              <video
+                className="w-full h-full object-cover rounded-lg"
+                muted
+                playsInline
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => {
+                  e.currentTarget.pause();
+                  e.currentTarget.currentTime = 0;
+                }}
+              >
+                <source src="/wonderland.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <Link href="/wonderland">
               <button className="enter-btn wonderland">Enter Wonderland</button>
             </Link>
           </div>
 
-          <div className="video-wrapper">
-            <iframe 
-              src="https://www.youtube.com/embed/VIDEO_ID_2?loop=1&playlist=VIDEO_ID_2&mute=1" 
-              frameBorder="0" 
-              allowFullScreen
-            />
+          <div className="relative w-full">
+            <div className="video-wrapper">
+              <video
+                className="w-full h-full object-cover rounded-lg"
+                muted
+                playsInline
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => {
+                  e.currentTarget.pause();
+                  e.currentTarget.currentTime = 0;
+                }}
+              >
+                <source src="/blackmirror.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <button 
               className="enter-btn blackmirror"
               onClick={handleBlackmirrorClick}

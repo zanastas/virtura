@@ -48,51 +48,94 @@ h1 {
 }
 
 .video-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
-    margin-bottom: 20px;
+    margin: 2rem 0;
     width: 100%;
+    max-width: 1200px;
 }
 
-.video-wrapper {
-    flex: 1;
-    max-width: 560px;
+.video-container > div {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
-iframe {
+.video-container video {
     width: 100%;
+    height: 100%;
     aspect-ratio: 16/9;
-    margin-bottom: 20px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.video-container .enter-btn {
+    position: relative;
+    transform: none;
+    left: auto;
+    bottom: auto;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .enter-btn {
     padding: 15px 30px;
     font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    color: white;
+    min-width: 200px;
+    text-align: center;
 }
 
 .enter-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     cursor: none;
 }
 
 .wonderland {
-    background-color: #4CAF50;
-    color: white;
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.wonderland:hover {
+    border-color: rgba(76, 175, 80, 0.6);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 .blackmirror {
-    background-color: #2196F3;
-    color: white;
+    border-color: rgba(33, 150, 243, 0.4);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.blackmirror:hover {
+    border-color: rgba(33, 150, 243, 0.6);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Add this new CSS for the custom cursor */
@@ -144,8 +187,7 @@ iframe {
 /* Responsive Design */
 @media (max-width: 768px) {
     .video-container {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
     }
 
     .video-wrapper {
